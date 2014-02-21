@@ -1,0 +1,638 @@
+#title{
+	text-align: center;
+}
+
+.panel-heading{
+	text-align: center;
+	height: 45px;
+}
+
+.head{
+	margin-top: 10px;
+}
+
+#containerMessages,#containerUsers{
+	height: 500px;
+	overflow-y: scroll;
+	border: 1px solid #eee;
+	margin-bottom: 15px;
+	background: #444;
+}
+
+.message{
+	padding: 5px 2px;
+	border: 1px solid #eee;
+	border-radius: 6px;
+}
+
+#formModal{
+	top: 15%;
+}
+
+#loginBtn{
+	width: 100%;
+}
+
+#formLogin{
+	margin-top: 15px;
+}
+
+.errorMsg{
+	height: 50px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.info{
+	height: 30px;
+	font-size: 14px;
+	padding: 3px 10px;
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border: 1px solid #bce8f1;
+	border-radius: 6px;
+}
+
+.disconnect{
+	height: 30px;
+	font-size: 14px;
+	padding: 3px 10px;
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border: 1px solid #bce8f1;
+	border-radius: 6px;
+}
+#chatMsgs p,#containerUsers p{
+	border-radius: 8px;
+	padding: 4px;
+}
+
+
+
+
+div.row:odd > div.col{
+  background-color:blue;
+}
+div.row {
+  clear:both;
+}
+div.col {
+  float:left;
+  height:50px;
+  width:50px;
+  border:solid 1px black;
+  border-collapse:collapse;
+}
+div.col[color="0"] {
+  background-color:white;
+}
+
+div.col[color="1"] {
+  background-color:rgb(131, 131, 26);
+}
+
+
+.btn-block.btn-primary.unirse {
+  display:none;
+}
+
+.btn-block.btn-primary.unirse[fuerza_display="1"] {
+	display:block;
+}
+
+div.unirse-container{
+	height:50px;
+  width:50px;
+  border:solid 1px red;
+  border-collapse:collapse;
+	position:fixed;
+	top:40px;
+	left:40px;
+}
+
+div.pieza{
+	background-color:transparent;
+	position:absolute;
+	height:50px;
+	width:50;
+	border: solid 0px;
+	-webkit-transition: top 1s, left 1s;
+}
+
+div.pieza>img{
+	height:50px;
+	width:50px;
+	*margin-top:40px;
+}
+
+div.container.chess{
+	position:relative;
+	float:left;
+	display:block;
+	padding:0px 30px 0px 0px!important;
+	margin: 2px 0px 0px 0px;
+	border: solid;
+	width: auto;
+  z-index: 1001;
+  min-width:420px;
+  min-height:420px;
+  overflow:hidden;
+  *opacity:0.09;
+}
+
+div.container.chess div.row{
+	margin:0px;
+}
+
+div.arriba{
+  position: absolute;
+  left:450px;
+  top:20px;
+}
+
+
+div.abajo{
+  position: absolute;
+  left:450px;
+  top:320px;
+}
+
+div.container.chess[active="blancas"] div[pcolor="blancas"]>img:hover{
+  border:solid yellow;
+}
+div.container.chess[active="negras"] div[pcolor="negras"]>img:hover{
+  border:solid yellow;
+}
+
+div.capturer[active="1"]{
+	z-index:10000;
+}
+div.capturer{
+	position:fixed;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	height:auto;
+	width:auto;
+	z-index:-1;
+	background-color:transparent;
+}
+
+div.jugadas{
+	position:absolute;
+	left:0px;
+	top:100px;
+	height:400px;
+	width:190px;
+	overfow:auto;
+}
+div.jugadas>div:first-child {
+	float:left;
+	width:30px;
+  
+}
+
+div.jugadas>div:first-child +div{
+	float:left;
+	width:60px;
+}
+
+div.jugadas>div:first-child +div+div{
+	float:left;
+	width:60px;
+}
+div.jugadas>div{
+	border-right:solid 1px black;
+	height:100%;
+  padding-left:2px;
+}
+
+div.chat-container{
+	border:solid green;
+	height:300px;
+	overflow:auto;
+}
+
+
+div.rooms-container{
+	border:solid green;
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	width:500px;
+	background-color:white;
+	height:300px;
+	overflow:auto;
+	z-index:1;
+} 
+
+div.rooms-buttons>button{
+	margin:5px;
+}
+
+div.rooms-buttons{
+	display:block;
+}
+
+div.row-room-list{
+	clear:left;
+}
+
+div.rooms-buttons>button.normal150	{
+	float:left;
+}
+
+button.normal50{
+	width:50px!important;
+}
+
+button.normal150{
+	width:150px!important;
+}
+
+div.nologin{
+	display:none;
+}
+div.room[showMode="0"] {
+	display:none;
+}
+div.room[showMode="1"] {
+	display:block;
+}
+
+div.room-container{
+	position:fixed;
+	left:2%;
+	right:2%;
+	top:2%;
+	bottom:2%;
+}
+div.room {
+	display:none;
+	position:relative;
+	height:100%;
+	*height : 80%;
+	*top : 0%;
+	*left : 0%;
+	*position : fixed;
+	z-index:2;
+	border : solid black;
+	background-color:gray;	
+}
+
+div.room>div.content>div.content-block{
+	height:100%;
+	display:block;
+	position:relative;
+}
+
+div.room>div.content{
+	float:left;
+	height:400px;
+	display:block;
+}
+div.room>div.left{
+	width:199px;
+	*float:left;
+	height:100%;
+	display:inline-block;
+}
+div.room>div.content{
+	position:relative!important;
+	display:inline-block!important;
+}
+div.room>div>div.content-left{
+	width: 199px;
+	z-index: 3;
+	border: solid black;
+	margin: 2px;
+	background-color: #ccc;
+	bottom: 0px;
+	position: absolute;
+	top: 0px;
+	height: auto;
+}
+
+div.room>div.content>div.content-block>button.abajo{
+	position:absolute;
+	bottom:10px;
+}
+
+div.button.unir{
+	z-index.3px;
+}
+input.room-panel{
+	width:50px;
+	float:left;
+	clear:left;
+}
+
+span.NEGRAS {
+	position:absolute;
+	bottom:45px;
+	left:4px;
+}
+
+div.row-room-list>div>span{
+	margin-left:5px;
+}
+
+
+div.row-room-list>div:first-child>span:first-child+span,
+div.row-room-list>div:first-child>span:first-child+span+span+span{
+	width:70px;
+	border:solid 1px black;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+	padding:1px 10px;
+	background-image: -webkit-linear-gradient(bottom, rgb(106,162,217) 5%, rgb(166,204,222) 50%, rgb(214,224,235) 94%);
+
+}
+
+div.row-room-list>div:first-child>span.disabled{
+	color:#ccc;
+	background-image: -webkit-linear-gradient(bottom, rgb(147, 153, 159) 5%, rgb(85, 100, 107) 50%, rgb(156, 158, 160) 94%)!important;
+}
+
+div.row-room-list>div:first-child>span:first-child{
+	border-left:solid 0px!important;
+	border-top:solid 0px!important;
+}
+div.row-room-list{
+	border:solid 1px black;
+}
+div.row-room-list>div:first-child+div>span:first-child{
+	text-align:right;
+	display:inline-block;
+	width:40%;
+	border-right:solid 1px black;
+}
+div.row-room-list>div:first-child+div>span:first-child+span{
+	text-align:left;
+	display:inline-block;
+	width:40%;
+}
+div.row-room-list>div:first-child>span{
+	border:solid 1px black;
+	border-bottom:solid 0px;
+}
+div.row-room-list>div>span:first-child+span+span,
+ div.row-room-list>div>span:first-child+span+span+span+span{
+	margin-left:5px;
+	width:100px;
+	display:inline-block;
+}
+
+div.btn-comenzar[state="1"]{
+	display:block;
+}
+
+div.pieza[state="0"]{
+	display:none;
+}
+
+div.btn-comenzar{
+	display:none;
+	
+	text-align:center;
+	background-image: -webkit-linear-gradient(bottom, rgb(106,162,217) 5%, rgb(166,204,222) 50%, rgb(214,224,235) 94%);
+	border:solid 1px black;
+	border-bottom-right-radius:5px;
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	position:fixed;
+	top:50%;
+	left:40%;
+	width:20%;
+}
+
+div.container.chess>div.container{
+  *opacity:0.01;
+}
+
+div.like-button{
+	width: 70px;
+	border: solid 1px black;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: 1px 10px;
+	background-image: -webkit-linear-gradient(bottom, rgb(106,162,217) 5%, rgb(166,204,222) 50%, rgb(214,224,235) 94%);
+}
+div.incenter{
+	position:fixed;
+	left:20%;
+	top:20%;
+	right:20%;
+	bottom:20%;
+	border:solid;
+	z-index: 10;
+	background: gray;
+}
+
+div.incenter.partidas>div>div{
+	float:left!important;
+	position:relative;
+}
+
+div.incenter.partidas[state="1"]{
+	display:block;
+}
+div.incenter.partidas[state="0"]{
+	display:none;
+}
+
+div.tableritos{
+	*position:absolute;
+	*height:410px;
+	*width:410px;
+	*bottom:10px;
+	*left:10px;
+	*float:left;
+	*float:right;
+	
+	position:absolute;
+	top:400px;
+	left:0px;
+	*display:inline-block
+}
+div.tableritos{
+	-webkit-transform: scale(0.5);
+	z-index:5;
+	*width:450px;
+}
+
+div.tablerito-container{
+	*position:fixed;
+	*top:0px;
+	*width:500px;
+	height:500px;
+	border:solid 1px red;
+	margin-bottom:10px;
+}
+div.tablerito-header{
+	*position:absolute;
+	top:0px;
+	left:0px;
+	width:500px;
+	height:20px;
+}
+div.tablerito-body{
+	*position:absolute;
+	top:21px;
+	left:0px;
+	width:500px;
+	bottom:0px;
+}
+
+
+
+div.tableritos>div.tablerito-container:first-child+div{
+	position: absolute;
+	top: 50px;
+	left:450px;
+}
+
+div.tableritos>div.tablerito-container:first-child+div+div{
+	position: absolute;
+	top: 500px;
+	left:10px;
+}
+
+div.tableritos>div.tablerito-container:first-child+div+div+div{
+	position: absolute;
+	top: 500px;
+	left:450px;
+}
+div.tableritos>div.tablerito-container:first-child{
+	position: absolute;
+	top: 50px;
+	left: 10px;
+}
+
+div.rows-numbers[rotacion="180"]>div,
+div.rows-numbers[rotacion="180"]{
+	-webkit-transform:rotateZ(180deg);
+}
+div.rows-numbers[rotacion="0"],
+div.rows-numbers[rotacion="0"]>div{
+	-webkit-transform:rotateZ(0deg);
+}
+
+div.rows-numbers{
+	float:left;
+	margin-left:-30px;
+	
+}
+
+div.rows-numbers>div{
+	color:white;
+	height:50px;
+	font-size:20px;
+	padding-top:15px;
+	width:30px;
+	text-align:center;
+}
+
+div.cols-names[rotacion="0"]>div.col-name{
+	float:left
+}
+div.cols-names[rotacion="180"]>div.col-name{
+	float:right
+}
+div.col-name{
+	float:left;
+	width:50px;
+	font-size:20px;
+	color:white;
+	height:30px;
+	text-align:center;
+}
+
+div.coronacion{
+	position:fixed;
+	display:none;
+	background-color:transparent;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:1000;
+}
+div.coronacion>div.blur{
+	position:fixed;
+	background-color:gray;
+	opacity:0.5;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+}
+div.coronacion>div.negras,
+div.coronacion>div.blancas{
+	position: absolute;
+	top: 50%;
+	left: 30%;
+}
+
+div.coronacion[color="blancas"]>div.blancas{
+	display:block;
+}
+div.coronacion[color="negras"]>div.blancas{
+	display:none;
+}
+div.coronacion[color="blancas"]>div.negras{
+	display:none;
+}
+div.coronacion[color="negras"]>div.negras{
+	display:block;
+}
+
+body[blurEffect="1"] div.pieza,
+body[blurEffect="1"] div.col{
+	-webkit-filter: grayscale(0.5) blur(18px);
+}
+
+div.editpanel[state="1"]{
+  display:block;
+}
+
+
+div.editpanel[state="0"]{
+  display:none;
+}
+
+div.editpanel{
+  height: 300px;
+  width: 500px;
+  position: fixed;
+  top: 600px;
+  left: 100px;
+  z-index: 1000;
+  background: gray;
+  border: solid black;
+  display: none;
+}
+
+div.editpanel>div.selected{
+  position:fixed;
+  top:200px;
+  left:10px;
+  width:200px;
+  height:200px;
+  border:solid red;
+  
+}
+
+div.chess.container.localTablero{
+	position: fixed;
+	top: 100px;
+	right: 0px;
+}
+
+div.editpanel>div.negras,
+div.editpanel>div.blancas{
+  position:fixed;
+  right:0px;
+}
