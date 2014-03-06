@@ -1,6 +1,6 @@
-chatNodeJSSocketIO
+chessNodeJSSocketIO
 ==================
 
-Chat with nodejs and socket.io
+Chess rooms with nodejs and socket.io
 
-Simple chat with nodejs, soocket.io and bootstrap twitter.
+Simple app to play chess onlice, with nodejs, express and soocket.io.

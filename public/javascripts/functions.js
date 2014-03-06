@@ -1,11 +1,4 @@
 var socket = io.connect(document.location);
-
-function cancelEvent(e) {
-	if (e && e.preventDefault) e.preventDefault();
-	if (e && e.stopPropagation) e.stopPropagation();
-	if (e) e.cancelBubbles=true;
-	return false;
-}
 //al actualizar la página eliminamos la sesión del usuario de sessionStorage
 $(document).ready(function() {
     manageSessions.unset("login");
@@ -75,9 +68,11 @@ $(function() {
     });    
 
 		rooms.initListeners();
+		macro(1);
+
 		
     $(".rooms-container").on("click", function(e){
-			this.style.zIndex = 3;
+			this.style.zIndex = 11;
 		})
 		
     $(".roon_in").on("click", function(e){
@@ -219,6 +214,18 @@ $(function() {
 			
 		});
 		
+		socket.on("onSolicitudAnular1", function(roomid,chessid,userid) {
+			if (userid==manageSessions.get('login')) {
+				rooms.onSolicitudAnular1(roomid,chessid,userid);
+			}
+		});
+
+		socket.on("onAceptarSolicitud", function(roomid,chessid,userid) {
+//			if (userid==manageSessions.get('login')) {
+				rooms.onAceptarSolicitud(roomid,chessid,userid);
+	//		}
+		});
+
 		socket.on("roomSetColor", function(userid,roomid,color) {
 			rooms.setColorInList(userid,roomid,color);
 		});
@@ -246,7 +253,6 @@ $(function() {
 			rooms.addToList(r);
 			if (room.owner==manageSessions.get('login'))
 				r.show();
-		
 		});
 				
 		socket.on("onOptionsChange", function(roomid,option,value) {
@@ -292,8 +298,8 @@ $(function() {
       
 		});
 		
-		socket.on("moving", function(chessid, from, to, jaque, coronado) {
-			chess.chesses[chessid].move(from,to,true,false,false,coronado);
+		socket.on("moving", function(chessid, from, to, jaque, coronado,pasarTurno) {
+			chess.chesses[chessid].move(from,to,true,pasarTurno,false,coronado);
 			if (jaque) {
 				chess.chesses[chessid].jaque();
 			}

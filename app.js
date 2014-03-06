@@ -29,6 +29,7 @@ app.get("/jugadores", function(req,res){
   var body = JSON.stringify(unidos);
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.end(body);  
+
   
 });
 
@@ -104,6 +105,14 @@ io.sockets.on('connection', function(socket)
 		
 	});
 
+	socket.on("solicitudAnular1", function(roomid,chessid,userid) {
+		socket.broadcast.emit("onSolicitudAnular1", roomid, chessid, userid);
+	});
+	
+	socket.on("aceptarSolicitud", function(roomid,chessid,userid) {
+		socket.broadcast.emit("onAceptarSolicitud", roomid, chessid, userid);
+	});
+
 	socket.on("setChessId", function(roomid,chessid) {
 		rooms[roomid].chessid=chessid;
 		socket.broadcast.emit("onSetChessId", roomid, chessid);
@@ -145,7 +154,8 @@ io.sockets.on('connection', function(socket)
 		{
 			return;
 		}
-      socket.broadcast.emit('moving',jugada.chessid,from,to,jaque, coronado)
+		var pasarTurno = jugada && jugada.pasarTurno?jugada.pasarTurno:false;
+      socket.broadcast.emit('moving',jugada.chessid,from,to,jaque, coronado,pasarTurno)
 		
 		if (jugada) {
 			if (!jugada.pasarTurno)
@@ -236,6 +246,6 @@ io.sockets.on('connection', function(socket)
 			socket.broadcast.emit("startGame", roomid);
 		
 	});
-	});
+});
 
 	
